@@ -1,10 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import CommentBox from './CommentBox';
+import CommentList from './CommentList';
 function App() {
   return (
-    <div className="App">Hi!</div>
+    <div className="App">
+      <CommentBox></CommentBox>
+      <CommentList></CommentList>
+    </div>
   );
 }
 
