@@ -17,6 +17,7 @@ class App extends Component {
       );
     }
   }
+
   renderHeader() {
     return (
       <ul>
@@ -24,26 +25,26 @@ class App extends Component {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/post">Post a Comment</Link>
+          <Link to="/post">Post A Comment</Link>
         </li>
         <li>{this.renderButton()}</li>
       </ul>
-    )
+    );
   }
 
   render() {
     return (
       <div>
         {this.renderHeader()}
-        <Route path="post" component={CommentBox} />
+        <Route path="/post" component={CommentBox} />
         <Route path="/" exact component={CommentList} />
       </div>
-      );
-    }
-};
+    );
+  }
+}
 
-const mapStateToProps = state => ({
-  auth: state.auth
-});
+function mapStateToProps(state) {
+  return { auth: state.auth };
+}
 
 export default connect(mapStateToProps, actions)(App);
